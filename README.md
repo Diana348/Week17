@@ -55,9 +55,9 @@ function bike () {
  var obj1 = {name:'pomidor', bike:bike};
  var obj2 = {name:'site', bike:bike}
 
- bike();
- obj1.bike();
- obj2.bike(); // код выведет "ninja", "pomidor", "site"
+ bike(); // код выведет "ninja" (потому что мы вызываем функцию bike(), которая была обьявлена ранее)
+ obj1.bike(); // код выведет "pomidor"и "site" потому, что обращаемся к переменной, которая является объектом и запрашиваем у нее по ключу значение.
+ obj2.bike();
 
  / --------------- Вопрос 5 --------------- /
  Статические поля хранят состояния класса в целом, а не отдельного объекта. Перед названием статического поля ставится ключевое слово static.
@@ -139,7 +139,7 @@ class Person {
 }
 
 const member = new Person ("John")
-console.log(typeOf member)
+console.log(typeOf member) // object (создается member - экземпляр класса person, тип - объект)
 
 / --------------- Вопрос 8 --------------- /
 const person = {
@@ -150,4 +150,5 @@ const person = {
 let city = person.city;
 city = "Amsterdam";
 
-console.log(person)
+console.log(person) // {name: "Valera", age: 23, city: "Amsterdam"}
+объекту person добавляется свойство city со значением "Amsterdam"
